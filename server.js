@@ -1,10 +1,14 @@
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
 
-// Apply CORS middleware globally
-app.use(cors());
+const corsOptions = {
+  origin: 'https://fronttest-ioybxpgo.daucu.site/', // Your frontend origin
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions));
 
 app.get('/api/customers', (req, res) => {
   const customers = [
@@ -17,5 +21,4 @@ app.get('/api/customers', (req, res) => {
 });
 
 const port = 5000;
-
 app.listen(port, () => console.log(`Server running on port ${port}`));
