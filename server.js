@@ -1,14 +1,24 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
 
-const corsOptions = {
-  origin: 'https://fronttest-eazrwtdu.daucu.site/', // Your frontend origin
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-};
+// cors
+const cors = require("cors");
+//Loop of allowed origins
+const allowedOrigins = [
+  "http://localhost:3001",
+  "http://localhost:3000",
+  "https://admin-for-all.vercel.app",
+  "https://dauqunews.vercel.app",
+  "https://fronttest-eazrwtdu.daucu.site",
+];
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
+
 
 app.get('/api/customers', (req, res) => {
   const customers = [
