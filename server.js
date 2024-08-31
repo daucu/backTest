@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 
 const corsOptions = {
-  origin: 'https://fronttest-ioybxpgo.daucu.site/', // Your frontend origin
+  origin: 'https://fronttest-eazrwtdu.daucu.site/', // Your frontend origin
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 };
