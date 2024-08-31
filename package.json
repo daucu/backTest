@@ -4,12 +4,11 @@
   "description": "Starter kit for creating React and Express apps",
   "main": "server.js",
   "scripts": {
-    "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build-server": "rm -rf dist && webpack --config webpack.config.js --progress"
+    "build": "rm -rf dist && webpack --config webpack.config.js --progress"
   },
   "author": "Brad Traversy",
   "license": "MIT",
